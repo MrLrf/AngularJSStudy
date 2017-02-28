@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script type="text/javascript">
+			var mybind = {
+				name:'liuzg',
+				age:'123',
+				hobby:'java'
+			};
+			var mybinding = function(mybind){
+				var mybinds = $("[my-bind]");
+				$("[my-bind]").each(function(){
+					var key = $(this).attr("my-bind");
+					$(this).text(mybind[key]);
+				});
+			};
+			$(function(){
+				mybinding(mybind);
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<span my-bind="name"></span>
+			<span my-bind="age"></span>
+			<span my-bind="hobby"></span>
+		</div>
+	</body>
+</html>
